@@ -11,10 +11,11 @@ public class Conductor {
         this.roundTripTickets = roundTripTickets;
     }
 
-    public void showTransactionInfo(){
-        int totalPrice =  singleTicketPrice*(roundTripTickets*0.9 + totalTickets);
+    public void showTransactionInfo() {
+        int fullTickets = totalTickets - roundTripTickets;
+        int totalPrice = (int) (singleTicketPrice * fullTickets + singleTicketPrice * 2 * roundTripTickets * 0.9);
 
-        System.out.printf("Total Tickets:%d \n Round-trip:%d \n Total:%d \n",totalTickets,roundTripTickets,totalPrice);
+        System.out.printf("Total Tickets:%d \n Round-trip:%d \n Total:%d \n", totalTickets, roundTripTickets, totalPrice);
 
     }
 }
